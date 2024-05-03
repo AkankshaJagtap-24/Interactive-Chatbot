@@ -8,8 +8,6 @@ import numpy as np
 from keras.models import load_model 
 from flask_cors import CORS
 
-
-
 model = load_model('chatbot_model_v2.h5')
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('intents.json').read())
@@ -21,7 +19,7 @@ CORS(app)
 
 @app.get("/")
 def index_get():
-    return render_template("/base.html")
+    return render_template("C:/Users/NITIN/Documents/Interactive-Chatbot-1/templates/base.html")
 
 
 @app.route("/run")
@@ -36,11 +34,9 @@ def predict():
     message={"answer": response}
     return jsonify(message)
 
-
-
 @app.route("/get")
 def get_bot_response(show_details=True):
-    file =open(r'C:/Users/NITIN\Desktop\AI interactive agent\backend train_chatbot_v2.py','r').read()
+    file =open(r'C:/Users/NITIN/Documents/Interactive-Chatbot-1/backend train_chatbot_v2.py','r').read()
     xy = exec(file)
     userText = request.args.get('msg')
     return str(xy.chatbot.get_response(userText))
