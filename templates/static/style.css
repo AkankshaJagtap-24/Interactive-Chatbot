@@ -58,8 +58,8 @@ body {
 .send__button {
     padding: 6px;
     background: transparent;
-    border: purple;
-    outline: black;
+    border: rgb(8, 6, 8);
+    outline: rgb(8, 8, 8);
     cursor: pointer;
 }
 
